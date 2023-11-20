@@ -1,0 +1,55 @@
+name: app
+
+type: 'php:8.2'
+
+dependencies:
+  php:
+    composer/composer: '^2'
+
+build:
+  flavor: composer
+
+relationships:
+  database: 'db:mysql'
+
+disk: 2048
+
+mounts:
+  "storage/app/public":
+    source: local
+    source_path: "public"
+  "storage/framework/views":
+    source: local
+    source_path: "resources/views"
+  "storage/framework/sessions":
+    source: local
+    source_path: "sessions"
+  "storage/framework/cache":
+    source: local
+    source_path: "cache"
+  "storage/logs":
+    source: local
+    source_path: "logs"
+  "bootstrap/cache":
+    source: local
+    source_path: "cache"
+  "/.config":
+    source: local
+    source_path: "config"
+
+web:
+  locations:
+    '/':
+      root: 'public'
+      passthru: "/index.php"
+
+
+
+
+# TODO
+#hooks:
+#  build: |
+#    set -e
+#  deploy: |
+#    set -e
+#
