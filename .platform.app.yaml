@@ -75,6 +75,6 @@ web:
 
 variables:
   env:
-    APP_NAME: 'Juan'
+    APP_NAME: 'DDF Material List'
     APP_ENV: development
     APP_DEBUG: true
