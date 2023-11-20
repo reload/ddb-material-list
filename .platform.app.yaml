@@ -73,3 +73,8 @@ web:
       allow: true
       passthru: "/index.php"
 
+variables:
+  env:
+    APP_NAME: 'Juan'
+    APP_ENV: development
+    APP_DEBUG: true
